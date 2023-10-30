@@ -15,12 +15,17 @@ public class AutorImpl implements AutorI{
     private final AutorRepositorio autorRepositorio;
     @Override
     public List<Autor> findAllAutores() {
-        return autorRepositorio.findAll();
+        return autorRepositorio.findAll().stream().filter(Autor::getAlta).toList();
     }
 
     @Override
     public Autor buscarAutor(String id) {
-        return autorRepositorio.findById(id).orElse(null);
+        Autor autor = autorRepositorio.findById(id).orElse(null);
+        if (autor != null && autor.getAlta()){
+            return autor;
+        } else{
+            return null;
+        }
     }
 
     @Override
@@ -32,7 +37,8 @@ public class AutorImpl implements AutorI{
     @Override
     public String modificarAutor(Autor autor) {
         Autor autor1 = autorRepositorio.findById(autor.getId()).orElse(null);
-        if (autor1 != null){
+        if (autor1 != null && autor1.getAlta()){
+            autor1.setId(autor.getId());
             autor1.setNombre(autor.getNombre());
             autor1.setAlta(autor.getAlta());
             autorRepositorio.save(autor1);

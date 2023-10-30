@@ -13,12 +13,17 @@ public class LibroImpl implements LibroI{
     private final LibroRepositorio libroRepositorio;
     @Override
     public List<Libro> findAllLibros() {
-        return libroRepositorio.findAll();
+        return libroRepositorio.findAll().stream().filter(Libro::getAlta).toList();
     }
 
     @Override
     public Libro buscarLibro(Long isbn) {
-        return libroRepositorio.findById(isbn).orElse(null);
+        Libro libro = libroRepositorio.findById(isbn).orElse(null);
+        if (libro != null && libro.getAlta()){
+            return libro;
+        }else {
+            return null;
+        }
     }
 
     @Override
@@ -30,7 +35,7 @@ public class LibroImpl implements LibroI{
     @Override
     public String modificarLibro(Libro libro) {
         Libro libro1 = libroRepositorio.findById(libro.getIsbn()).orElse(null);
-        if (libro1 != null){
+        if (libro1 != null && libro1.getAlta()){
             libro1.setId(libro.getId());
             libro1.setIsbn(libro.getIsbn());
             libro1.setTitulo(libro.getTitulo());
@@ -79,7 +84,7 @@ public class LibroImpl implements LibroI{
     @Override
     public String prestarLibro(Long isbn) {
         Libro libro = libroRepositorio.findById(isbn).orElse(null);
-        if (libro != null){
+        if (libro != null && libro.getAlta()){
             libro.setEjemplaresPrestados(libro.getEjemplaresPrestados()+1);
             libro.setEjemplaresRestantes(libro.getEjemplaresRestantes()-1);
             return  "Libro Prestado Correctamente";

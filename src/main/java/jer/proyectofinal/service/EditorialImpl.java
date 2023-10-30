@@ -13,12 +13,17 @@ public class EditorialImpl implements EditorialI{
     private final EditorialRepositorio editorialRepositorio;
     @Override
     public List<Editorial> findAllEditoriales() {
-        return editorialRepositorio.findAll();
+        return editorialRepositorio.findAll().stream().filter(Editorial::getAlta).toList();
     }
 
     @Override
     public Editorial buscarEditorial(String id) {
-        return editorialRepositorio.findById(id).orElse(null);
+        Editorial editorial = editorialRepositorio.findById(id).orElse(null);
+        if (editorial != null && editorial.getAlta()){
+            return editorial;
+        }else{
+            return null;
+        }
     }
 
     @Override
@@ -30,7 +35,8 @@ public class EditorialImpl implements EditorialI{
     @Override
     public String modificarEditorial(Editorial editorial) {
         Editorial editorial1 = editorialRepositorio.findById(editorial.getId()).orElse(null);
-        if (editorial1 != null){
+        if (editorial1 != null && editorial1.getAlta()){
+            editorial1.setId(editorial.getId());
             editorial1.setAlta(editorial.getAlta());
             editorial1.setNombre(editorial.getNombre());
             return "Editorial " + editorial1.getId() + " Modificada Correctamente";
