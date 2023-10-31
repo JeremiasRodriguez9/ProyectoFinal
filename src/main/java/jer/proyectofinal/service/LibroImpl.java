@@ -57,6 +57,7 @@ public class LibroImpl implements LibroI{
         Libro libro = libroRepositorio.findById(isbn).orElse(null);
         if (libro != null) {
             libro.setAlta(false);
+            libroRepositorio.save(libro);
             return "Libro Dado de Baja";
         } else {
             return "Libro no Encontrado";
@@ -68,6 +69,7 @@ public class LibroImpl implements LibroI{
         Libro libro = libroRepositorio.findById(isbn).orElse(null);
         if (libro != null) {
             libro.setAlta(true);
+            libroRepositorio.save(libro);
             return "Libro Dado de Alta";
         } else {
             return "Libro no Encontrado";
@@ -86,6 +88,7 @@ public class LibroImpl implements LibroI{
         if (libro != null && libro.getAlta()){
             libro.setEjemplaresPrestados(libro.getEjemplaresPrestados()+1);
             libro.setEjemplaresRestantes(libro.getEjemplaresRestantes()-1);
+            libroRepositorio.save(libro);
             return  "Libro Prestado Correctamente";
         }else {
         return "Libro No Encontrado";}
