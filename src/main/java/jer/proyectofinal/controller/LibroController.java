@@ -37,7 +37,7 @@ public class LibroController {
     @PostMapping("/updateLibro")
     public ResponseEntity<String> modificarLibro(@RequestBody Libro libro){
         String mensaje = libroService.modificarLibro(libro);
-        return new ResponseEntity<>(mensaje, HttpStatus.OK);
+        return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
     }
 
     @PostMapping("/baja")
@@ -55,12 +55,12 @@ public class LibroController {
     @PostMapping("/delete")
     public ResponseEntity<String> borrarLibro(@RequestParam Long isbn){
         String mensaje = libroService.borrarLibro(isbn);
-        return new ResponseEntity<>(mensaje, HttpStatus.OK);
+        return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
     }
 
     @PostMapping("/prestar")
     public ResponseEntity<String> prestarLibro(@RequestParam Long isbn){
         String mensaje = libroService.prestarLibro(isbn);
-        return new ResponseEntity<>(mensaje, HttpStatus.OK);
+        return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
     }
 }
