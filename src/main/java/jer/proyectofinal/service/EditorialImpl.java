@@ -17,7 +17,7 @@ public class EditorialImpl implements EditorialI{
     }
 
     @Override
-    public Editorial buscarEditorial(String id) {
+    public Editorial buscarEditorial(Long id) {
         Editorial editorial = editorialRepositorio.findById(id).orElse(null);
         if (editorial != null && editorial.getAlta()){
             return editorial;
@@ -39,6 +39,7 @@ public class EditorialImpl implements EditorialI{
             editorial1.setId(editorial.getId());
             editorial1.setAlta(editorial.getAlta());
             editorial1.setNombre(editorial.getNombre());
+            editorialRepositorio.save(editorial1);
             return "Editorial " + editorial1.getId() + " Modificada Correctamente";
         }else {
             return "Editorial no Encontrada";
@@ -46,10 +47,11 @@ public class EditorialImpl implements EditorialI{
     }
 
     @Override
-    public String darBajaEditorial(String id) {
+    public String darBajaEditorial(Long id) {
         Editorial editorial = editorialRepositorio.findById(id).orElse(null);
         if (editorial != null){
             editorial.setAlta(false);
+            editorialRepositorio.save(editorial);
             return "Editorial Dada de Baja";
         }else{
             return "Editorial No Encontrada";
@@ -57,10 +59,11 @@ public class EditorialImpl implements EditorialI{
     }
 
     @Override
-    public String darAltaEditorial(String id) {
+    public String darAltaEditorial(Long id) {
         Editorial editorial = editorialRepositorio.findById(id).orElse(null);
         if (editorial != null){
             editorial.setAlta(true);
+            editorialRepositorio.save(editorial);
             return "Editorial Dada de Alta";
         }else{
             return "Editorial No Encontrada";
@@ -68,7 +71,7 @@ public class EditorialImpl implements EditorialI{
     }
 
     @Override
-    public String borrarEditorial(String id) {
+    public String borrarEditorial(Long id) {
         editorialRepositorio.deleteById(id);
         return "Editorial " + id + " Eliminada Correctamente";
     }

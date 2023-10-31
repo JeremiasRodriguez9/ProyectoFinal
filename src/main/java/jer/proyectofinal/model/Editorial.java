@@ -1,13 +1,10 @@
 package jer.proyectofinal.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Entity
-@Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -15,7 +12,7 @@ import lombok.*;
 @ToString
 public class Editorial {
     @Id
-    private String id;
+    private Long id;
 
     private String nombre;
 

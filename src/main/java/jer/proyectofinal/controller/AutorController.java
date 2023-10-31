@@ -22,8 +22,8 @@ public class AutorController {
         return new ResponseEntity<>(lista, HttpStatus.OK);
     }
 
-    @GetMapping("findAutor")
-    public ResponseEntity<Autor> buscarAutor(@RequestParam String id){
+    @GetMapping("/findAutor")
+    public ResponseEntity<Autor> buscarAutor(@RequestParam Long id){
         Autor autor = autorService.buscarAutor(id);
         return new ResponseEntity<>(autor, HttpStatus.OK);
     }
@@ -41,19 +41,19 @@ public class AutorController {
     }
 
     @PostMapping("/baja")
-    public ResponseEntity<String> darBajaAutor(@RequestParam String id){
+    public ResponseEntity<String> darBajaAutor(@RequestParam Long id){
        String mensaje = autorService.darBajaAutor(id);
        return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
 
     @PostMapping("/alta")
-    public ResponseEntity<String> darAltaAutor(@RequestParam String id){
+    public ResponseEntity<String> darAltaAutor(@RequestParam Long id){
         String mensaje = autorService.darAltaAutor(id);
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<String> borrarAutor(@RequestParam String id) {
+    public ResponseEntity<String> borrarAutor(@RequestParam Long id) {
         String mensaje = autorService.borrarAutor(id);
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }

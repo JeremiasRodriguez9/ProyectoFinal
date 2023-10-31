@@ -23,7 +23,7 @@ public class EditorialController {
     }
 
     @GetMapping("/findEditorial")
-    public ResponseEntity<Editorial> buscarEditorial(@RequestParam String id){
+    public ResponseEntity<Editorial> buscarEditorial(@RequestParam Long id){
         Editorial editorial = editorialService.buscarEditorial(id);
         return new ResponseEntity<>(editorial, HttpStatus.OK);
     }
@@ -41,19 +41,19 @@ public class EditorialController {
     }
 
     @PostMapping("/baja")
-    public ResponseEntity<String> darBajaEditorial(@RequestParam String id){
+    public ResponseEntity<String> darBajaEditorial(@RequestParam Long id){
         String mensaje = editorialService.darBajaEditorial(id);
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
 
     @PostMapping("/alta")
-    public ResponseEntity<String> darAltaEditorial(@RequestParam String id){
+    public ResponseEntity<String> darAltaEditorial(@RequestParam Long id){
         String mensaje = editorialService.darAltaEditorial(id);
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<String> borrarEditorial(@RequestParam String id){
+    public ResponseEntity<String> borrarEditorial(@RequestParam Long id){
         String mensaje = editorialService.borrarEditorial(id);
         return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }

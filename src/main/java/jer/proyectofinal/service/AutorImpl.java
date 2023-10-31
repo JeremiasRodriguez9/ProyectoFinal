@@ -19,12 +19,12 @@ public class AutorImpl implements AutorI{
     }
 
     @Override
-    public Autor buscarAutor(String id) {
+    public Autor buscarAutor(Long id) {
         Autor autor = autorRepositorio.findById(id).orElse(null);
         if (autor != null && autor.getAlta()){
             return autor;
-        } else{
-            return null;
+            }else{
+                return null;
         }
     }
 
@@ -49,10 +49,11 @@ public class AutorImpl implements AutorI{
     }
 
     @Override
-    public String darBajaAutor(String id) {
+    public String darBajaAutor(Long id) {
         Autor autor = autorRepositorio.findById(id).orElse(null);
         if (autor != null){
             autor.setAlta(false);
+            autorRepositorio.save(autor);
             return "Autor Dado de Baja";
         }else{
             return "Autor no Encontrar";
@@ -60,10 +61,11 @@ public class AutorImpl implements AutorI{
     }
 
     @Override
-    public String darAltaAutor(String id) {
+    public String darAltaAutor(Long id) {
         Autor autor = autorRepositorio.findById(id).orElse(null);
         if (autor != null){
             autor.setAlta(true);
+            autorRepositorio.save(autor);
             return "Autor Dado de Alta";
         }else{
             return "Autor no Encontrar";
@@ -71,7 +73,7 @@ public class AutorImpl implements AutorI{
     }
 
     @Override
-    public String borrarAutor(String id) {
+    public String borrarAutor(Long id) {
         autorRepositorio.deleteById(id);
         return "Autor " + id + " Eliminado Correctamente";
     }

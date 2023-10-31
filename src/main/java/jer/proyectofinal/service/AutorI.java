@@ -8,14 +8,14 @@ public interface AutorI {
 
     List<Autor> findAllAutores();
 
-    Autor buscarAutor(String id);
+    Autor buscarAutor(Long id);
 
     String guardarAutor(Autor autor);
 
     String modificarAutor(Autor autor);
 
-    String darBajaAutor(String id);
+    String darBajaAutor(Long id);
 
-    String darAltaAutor(String id);
-    String borrarAutor(String id);
+    String darAltaAutor(Long id);
+    String borrarAutor(Long id);
 }

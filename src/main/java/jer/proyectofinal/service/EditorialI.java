@@ -8,14 +8,14 @@ public interface EditorialI {
 
     List<Editorial> findAllEditoriales();
 
-    Editorial buscarEditorial(String id);
+    Editorial buscarEditorial(Long id);
 
     String guardarEditorial(Editorial editorial);
 
     String modificarEditorial(Editorial editorial);
 
-    String darBajaEditorial(String id);
+    String darBajaEditorial(Long id);
 
-    String darAltaEditorial(String id);
-    String borrarEditorial(String id);
+    String darAltaEditorial(Long id);
+    String borrarEditorial(Long id);
 }

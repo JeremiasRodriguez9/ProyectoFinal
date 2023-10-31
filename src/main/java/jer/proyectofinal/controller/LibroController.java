@@ -28,16 +28,16 @@ public class LibroController {
         return new ResponseEntity<>(libro, HttpStatus.OK);
     }
 
-    @PostMapping("saveLibro")
+    @PostMapping("/saveLibro")
     public ResponseEntity<String> guardarLibro(@RequestBody Libro libro){
         String mensaje = libroService.guardarLibro(libro);
         return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
     }
 
-    @PostMapping("updateLibro")
+    @PostMapping("/updateLibro")
     public ResponseEntity<String> modificarLibro(@RequestBody Libro libro){
         String mensaje = libroService.modificarLibro(libro);
-        return new ResponseEntity<>(mensaje, HttpStatus.CREATED);
+        return new ResponseEntity<>(mensaje, HttpStatus.OK);
     }
 
     @PostMapping("/baja")

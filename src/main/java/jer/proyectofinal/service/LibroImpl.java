@@ -37,7 +37,6 @@ public class LibroImpl implements LibroI{
         Libro libro1 = libroRepositorio.findById(libro.getIsbn()).orElse(null);
         if (libro1 != null && libro1.getAlta()){
             libro1.setId(libro.getId());
-            libro1.setIsbn(libro.getIsbn());
             libro1.setTitulo(libro.getTitulo());
             libro1.setFechaPublicacion(libro.getFechaPublicacion());
             libro1.setEjemplares(libro.getEjemplares());

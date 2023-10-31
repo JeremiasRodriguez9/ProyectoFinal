@@ -6,7 +6,6 @@ import lombok.*;
 import java.time.LocalDate;
 import java.util.List;
 @Entity
-@Table
 @NoArgsConstructor
 @Getter
 @Setter
@@ -28,9 +27,9 @@ public class Libro {
     private Integer ejemplaresRestantes;
 
     private Boolean alta;
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Autor> autores;
-    @OneToOne
+    @ManyToOne
     private Editorial editorial;
 
     public Libro(String id, Long isbn, String titulo, LocalDate fechaPublicacion, Integer ejemplares, Integer ejemplaresPrestados, Boolean alta, List<Autor> autores, Editorial editorial) {
