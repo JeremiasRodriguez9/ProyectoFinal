@@ -1,0 +1,560 @@
+{
+	"info": {
+		"_postman_id": "463dab2f-5e41-45ae-886f-39e9a6fa2377",
+		"name": "ProyectoFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30810518"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/editoriales/findAllEditoriales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/editoriales/findAllEditoriales",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"findAllEditoriales"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/editoriales/findEditorial?id=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/editoriales/findEditorial?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"findEditorial"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/editoriales/saveEditorial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2,\r\n        \"nombre\": \"Editorial B\",\r\n        \"alta\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editoriales/saveEditorial",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"saveEditorial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/editoriales/updateEditorial",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"id\": 2,\r\n        \"nombre\": \"Editorial B\",\r\n        \"alta\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/editoriales/updateEditorial",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"updateEditorial"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/editoriales/baja?id=2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/editoriales/baja?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"baja"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/editoriales/alta?id=2",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/editoriales/alta?id=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"alta"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/editoriales/delete?id=25",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/editoriales/delete?id=25",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"editoriales",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "25"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/findAllAutores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores/findAllAutores",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"findAllAutores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/findAutor?id=5",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores/findAutor?id=5",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"findAutor"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "5"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/saveAutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1 ,\r\n    \"nombre\": \"Juan Pérez\" ,\r\n    \"alta\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/autores/saveAutor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"saveAutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/updateAutor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 1 ,\r\n    \"nombre\": \"Juan Mendez\" ,\r\n    \"alta\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/autores/updateAutor",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"updateAutor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/baja?id=3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores/baja?id=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"baja"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/alta?id=3",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores/alta?id=3",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"alta"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/autores/delete?id=11",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/autores/delete?id=11",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autores",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "11"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/findAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/findAll",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"findAll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/findLibro?isbn=9783456789012",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/findLibro?isbn=9783456789012",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"findLibro"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "9783456789012"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/saveLibro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"10\",\r\n    \"isbn\": 9780123456789,\r\n    \"titulo\": \"Libro 10\",\r\n    \"fechaPublicacion\": \"2018-09-14\",\r\n    \"ejemplares\": 100,\r\n    \"ejemplaresPrestados\": 9,\r\n    \"ejemplaresRestantes\": 91,\r\n    \"alta\": true,\r\n    \"autores\": [\r\n        {\r\n        \"id\": 13,\r\n        \"nombre\": \"Miguel Rodríguez\",\r\n        \"alta\": true\r\n    },\r\n    {\r\n        \"id\": 14,\r\n        \"nombre\": \"Carmen Sánchez\",\r\n        \"alta\": true\r\n    }\r\n    ],\r\n    \"editorial\": {\r\n        \"id\": 10,\r\n        \"nombre\": \"Editorial J\",\r\n        \"alta\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/libros/saveLibro",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"saveLibro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/updateLibro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"3\",\r\n    \"isbn\": 9783456789012,\r\n    \"titulo\": \"Libro 3\",\r\n    \"fechaPublicacion\": \"2023-01-10\",\r\n    \"ejemplares\": 80,\r\n    \"ejemplaresPrestados\": 5,\r\n    \"ejemplaresRestantes\": 75,\r\n    \"alta\": true,\r\n    \"autores\": [\r\n        {\r\n            \"id\": 5,\r\n            \"nombre\": \"Pedro Sánchez\",\r\n            \"alta\": true\r\n        },\r\n        {\r\n            \"id\": 8,\r\n            \"nombre\": \"Elena Herrera\",\r\n            \"alta\": true\r\n        }\r\n    ],\r\n    \"editorial\": {\r\n        \"id\": 3,\r\n        \"nombre\": \"Editorial C\",\r\n        \"alta\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/libros/updateLibro",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"updateLibro"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/baja?isbn=9780123456789",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/baja?isbn=9780123456789",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"baja"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "9780123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/alta?isbn=9780123456789",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/alta?isbn=9780123456789",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"alta"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "9780123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/delete?isbn=97801234562585",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/delete?isbn=97801234562585",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"delete"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "97801234562585"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/libros/prestar?isbn=9780123456789",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/libros/prestar?isbn=9780123456789",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"libros",
+						"prestar"
+					],
+					"query": [
+						{
+							"key": "isbn",
+							"value": "9780123456789"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
